@@ -17,3 +17,9 @@ When you configure a device as a tracker for the first time, a backup of the sto
 ## Considerations
 - If your steamvr exists in a location other than `C:\Program Files (x86)\Steam\steamapps\common\SteamVR\tools\lighthouse\bin\win64\lighthouse_console.exe` you will have to manually enter the path of the lighthouse_console.exe executable.
 - Try not to lose your stock configuration.
+
+## Build instructions
+- `pnpm run tauri build`
+- dependencies:
+    - rust nightly
+    - pnpm
