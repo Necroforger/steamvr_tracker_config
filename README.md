@@ -5,6 +5,8 @@ A small tool that makes the workflow of configuring your devices as trackers sli
 ![img](screenshots/screenshot1.png)
 
 ## How do
+Download the executable from releases. Place it in it's own folder so the folders and backups it creates don't pollute your desktop.
+
 1. Disconnect all steamvr devices. E.g headsets, base stations, and controllers.
 2. Launch the executable.
 3. Click search until a device is successfully discovered.
