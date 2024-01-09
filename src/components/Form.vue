@@ -316,6 +316,7 @@ async function backup() {
             <ElCard>
                 <img src="https://i.pinimg.com/736x/e6/53/66/e65366beffb5f7641a204efa0327700a.jpg" style="width: 150px"/>
                 <p>Another questionably useful application brought to you by Nekurou.</p>
+                <a href="https://github.com/Necroforger/steamvr_tracker_config" target="_blank">[ Github ]</a>
             </ElCard>           
             <ElDivider></ElDivider>
             <ElCard title="Overview">

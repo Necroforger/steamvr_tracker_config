@@ -37,6 +37,11 @@ fn cleanup(directory: impl AsRef<str>) {
     std::thread::sleep(Duration::from_millis(250));
     println!("Deleting: {}", directory.as_ref());
     fs::remove_dir_all(directory.as_ref()).unwrap();
+
+    println!("Removing temp dir");
+    if fs::metadata("temp").is_ok() {
+        fs::remove_dir_all("temp").expect("Could not remove temp dir");
+    }
 }
 
 fn main() {
