@@ -1,7 +1,7 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use std::{process::Command, time::Duration, env, collections::VecDeque, fs};
+use std::{process::Command, time::Duration, env, collections::VecDeque, fs, os::windows::process::CommandExt};
 
 use tauri::Manager;
 
@@ -16,6 +16,7 @@ async fn run_command(
     let out = Command::new(command)
         .current_dir(workdir)
         .arg(arg)
+        .creation_flags(winapi::um::winbase::CREATE_NO_WINDOW)
         .output();
 
     match out {

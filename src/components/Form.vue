@@ -108,12 +108,13 @@ async function upload_to_connected_device() {
         return
     }
     const payload = overlayed_json()
-    if (!util.backup_exists(device_id.value)) {
+    if (!(await util.backup_exists(device_id.value))) {
         await backup()
     }
 
     try {
         console.log(`Invoking with args: ${settings.value.executable_path},  ${payload}`)
+        scanning.value = true
         let result = await util.upload_lighthouse_config(settings.value.executable_path, payload)
         ElMessageBox.alert(result, 'Execution Result', {
             closeOnClickModal: true,
@@ -124,6 +125,8 @@ async function upload_to_connected_device() {
             message: e,
             type: 'error'
         })
+    } finally {
+        scanning.value = false
     }
 }
 
